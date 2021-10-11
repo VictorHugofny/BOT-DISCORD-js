@@ -76,7 +76,7 @@ const sobre = {
   
   "embed": {
     "title": "SOBRE - COMANDOS",
-    "description": "Comandos do BOT\n\nCanal no youtube = **!canal !channel **\nSobre = **!sobre !servidor !info **\nPortifolio = **!portifolio !site**\nRPG GAME = **!jogar !game**\n Gif = **!gif !gifs**\n",
+    "description": "Comandos do BOT\n\nCanal no youtube = **!canal !channel **\nSobre = **!sobre !servidor !info **\nPortifolio = **!portifolio !site**\nRPG GAME = **!jogar !game**\n Gif = **!gif !gifs**\n Video = **!video !videos**\n",
     "url": "https://victorhugofny.github.io/",
     "color": 5673997,
     "timestamp": new Date(),
@@ -111,7 +111,8 @@ const sobre = {
 
 const gifs = ["https://www.icegif.com/wp-content/uploads/icegif-540.gif","https://c.tenor.com/ixuFRFzUsQ8AAAAC/e-nois-alek.gif","https://c.tenor.com/Vou740E3HkgAAAAC/engracado-eversonzoio.gif","https://j.gifs.com/KzM8g3.gif","https://giphy.com/gifs/TOEIAnimationUK-dragon-ball-super-broky-1MdgKtLJ7rMw9wYWvH","https://thumbs.gfycat.com/CloseDirectJaeger-size_restricted.gif","https://s2.glbimg.com/X-E5LWsixEy6b0Q-PHO6C07gt5M=/607x607/smart/e.glbimg.com/og/ed/f/original/2018/12/19/88.gif","https://c.tenor.com/3YaztZFL3oEAAAAC/yoshi-yoshi-dan%C3%A7ando.gif","https://cdn.streamelements.com/uploads/9a174e1e-4043-472b-96e8-85259220638e.gif","https://thumbs.gfycat.com/ShrillSolidFennecfox-max-1mb.gif"]
 
-
+const videos = ["https://www.youtube.com/watch?v=OXHUsJGHxWY", "https://www.youtube.com/watch?v=vhXG3RN8tLA", "https://www.youtube.com/watch?v=2hmm1Y_HFrE&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex","https://www.youtube.com/watch?v=CaUmdW9LlUk&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex&index=5","https://www.youtube.com/watch?v=IyIqlGsPCHE&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex&index=13","https://www.youtube.com/watch?v=7XGW5HH1pZ0","https://www.youtube.com/watch?v=49EOEQoGm-A","https://www.youtube.com/watch?v=Odu55a5QtTE&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex&index=21","https://www.youtube.com/watch?v=IgQExxqppqg&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex&index=4","https://www.youtube.com/watch?v=FOleDCa2UVw&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex&index=28","https://www.youtube.com/watch?v=cWuQwBcOARs&list=PLNe4Vh4NJ8LEhytJaQrmQFgXVTtfmx0Ex&index=29","https://www.youtube.com/watch?v=73m7zpK2Sr8"]
+const comandos = [require("./comandos/hugo.js")]
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
@@ -133,7 +134,8 @@ bot.on('message',msg =>{
   
 
   if(temprefixo){
-	  if(comando == "hugo" ){
+    comandos.find(cmd=> cmd.prefixo.includes(comando) )
+	  /* if(comando == "hugo" ){
 		msg.reply("Ok")
 
 	  }
@@ -152,11 +154,14 @@ bot.on('message',msg =>{
 		msg.reply(jogo)
     }
 
-  else if("gif, gifs, Gifs, Gif"){
+  else if(["gif", "gifs", "Gifs", "Gif"].includes(comando)){
     msg.reply(gifs[Math.floor(Math.random() * 10)])
   }
+  else if(["video", "videos", "Video" , "Videos"].includes(comando)){
+    msg.reply(videos[Math.floor(Math.random() * 10)])
+  }
   
-  };
+   */};
             
 
 }
