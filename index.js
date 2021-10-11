@@ -111,6 +111,7 @@ const sobre = {
 
 const gifs = ["https://www.icegif.com/wp-content/uploads/icegif-540.gif","https://c.tenor.com/ixuFRFzUsQ8AAAAC/e-nois-alek.gif","https://c.tenor.com/Vou740E3HkgAAAAC/engracado-eversonzoio.gif","https://j.gifs.com/KzM8g3.gif","https://giphy.com/gifs/TOEIAnimationUK-dragon-ball-super-broky-1MdgKtLJ7rMw9wYWvH","https://thumbs.gfycat.com/CloseDirectJaeger-size_restricted.gif","https://s2.glbimg.com/X-E5LWsixEy6b0Q-PHO6C07gt5M=/607x607/smart/e.glbimg.com/og/ed/f/original/2018/12/19/88.gif","https://c.tenor.com/3YaztZFL3oEAAAAC/yoshi-yoshi-dan%C3%A7ando.gif","https://cdn.streamelements.com/uploads/9a174e1e-4043-472b-96e8-85259220638e.gif","https://thumbs.gfycat.com/ShrillSolidFennecfox-max-1mb.gif"]
 
+
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
@@ -150,11 +151,11 @@ bot.on('message',msg =>{
 	else if (["jogar","game","Jogo","Game","jogo","jogar","rpg"].includes(comando)){
 		msg.reply(jogo)
     }
+
   else if("gif, gifs, Gifs, Gif"){
-    let valorAleatorio = Math.floor(Math.random() * 10)
-    console.log(valorAleatorio)
-    msg.reply(gifs[valorAleatorio])
+    msg.reply(gifs[Math.floor(Math.random() * 10)])
   }
+  
   };
             
 
